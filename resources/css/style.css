@@ -1,7 +1,8 @@
 /* Universal Styles */
 html {
-  font-family: "Roboto-Regular", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  color: 	#505050;
 }
 
 .main-content {
@@ -13,16 +14,16 @@ html {
 .grey-bkgnd-section {
   display: flex;
   align-items: center;
-  background-color: grey;
+  background-color: #DCDCDC;
   width: 100%;
 
   border: 2px solid green;
 }
 
-.white-bkgnd-section {
+.whitesmoke-bkgnd-section {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: #F5F5F5;
   width: 100%;
 
   border: 2px solid green;
@@ -37,20 +38,65 @@ html {
   color: white;
 }
 
+.content-callout {
+  display: flex;
+  width: 26.4375rem;
+  height: 10.5rem;
+
+  border: 2px solid red;
+}
+
+.callout-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #F5F5F5;
+}
+
+.callout-text h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1.5rem 0 0.5rem 0;
+}
+
+.callout-text p {
+  font-size: 0.75rem;
+  color: #505050;
+  padding: 0 0 1rem 0;
+}
+
+.callout-text a {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #0099FF;
+}
+
 .image-container {
   overflow: hidden;
-  border: 2px solid yellow;
+  border: 2px solid blue;
 }
 
 .image-container img {
   display: block;
   max-width: 100%;
 
-  border: 2px solid red;
+    border: 2px solid yellow;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-container video {
+  display: block;
+  max-width: 100%;
+
+  border: 2px solid green;
 }
 
 
-/* Header */
+/**** Header ****/
 
 header {
   position: fixed;
@@ -76,7 +122,7 @@ header .home {
 
 header .content a {
   text-decoration: none;
-  color: grey;
+  color: #505050;
 }
 
 header .content span {
@@ -134,7 +180,7 @@ header .mobile {
 }
 
 #banner .image-container,
-#information-main .image-container {
+#information-content .image-container {
   width: 60%;
   margin: 2rem 1.5rem 2rem 1.5rem;
   background-color: grey;
@@ -153,14 +199,15 @@ header .mobile {
 }
 
 #banner .button {
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 0.5rem 0;
   width: 100%;
   text-align: center;
 }
 
 #banner h1 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
+  font-weight: 700;
   line-height: 2.5rem;
   padding-bottom: 2rem;
 
@@ -168,8 +215,9 @@ header .mobile {
 }
 
 #banner h3 {
-  font-size: 1.5rem;
-  line-height: 2.0rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5rem;
   padding-bottom: 2rem;
 
   border: 2px solid red;
@@ -196,41 +244,195 @@ header .mobile {
 }
 
 
-/* Main Information section */
+/**** Information section ****/
+/* Main image and callout */
 
-#information-main {
+#information-content {
   display: flex;
 }
 
-#information-main .main-info-image-callout {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-
-  border: 2px solid blue;
+#information-content .whitesmoke-bkgnd-section {
+  align-items: flex-start;
 }
 
-#information-main .info-callouts {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem 3rem 2rem 1rem;
-
-  border: 2px solid blue;
-}
-
-.main-info-image-callout h1 {
+#info-main-content h1 {
   font-size: 2rem;
   font-weight: 700;
   padding: 2rem 0 1.5rem 0;
 }
 
-#information-main p {
+#info-main-content p {
   font-size: 1rem;
 }
 
-.main-info-image-callout span {
+#info-main-content span {
   font-size: 0.75rem;
   padding: 2rem 0 2rem 0;
+}
+
+/* Secondary callouts */
+
+#info-secondary-callouts {
+  display: flex;
+
+  flex-direction: column;
+  margin-top: 1rem;
+
+  border: 2px solid blue;
+}
+
+#info-secondary-callouts .image-container {
+  width: 35%;
+  margin: 1rem;
+
+  border: 2px solid green;
+}
+
+
+/**** Learning section ****/
+/* Learning departments */
+
+#learning-content {
+  display: flex;
+}
+
+#learning-content .grey-bkgnd-section {
+  flex-direction: column;
+
+}
+
+#learning-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 2rem 0 1rem 0;
+}
+
+#learning-content h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1rem 0.5rem 0 1rem;
+}
+
+#learning-content h6 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 0.5rem 0.5rem 0 1rem;
+}
+
+#learning-content p {
+  font-size: 0.75rem;
+  color: #505050;
+  padding: 0.5rem 0.5rem 1.5rem 1rem;
+}
+
+#learning-content .image-container {
+  background-color: white;
+  width: 100%;
+
+  border: 2px solid green;
+}
+
+.course-row {
+  display: flex;
+  margin: 0 2rem;
+  align-items: stretch;
+  justify-content: center;
+
+  border: 2px solid red;
+}
+
+.course {
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  padding: 1rem;
+
+  border: 2px solid blue;
+}
+
+.course-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  border: 2px solid pink;
+}
+
+
+/**** Thesis section ****/
+/* Learning departments */
+
+#thesis-content {
+  display: flex;
+}
+
+#thesis-content .whitesmoke-bkgnd-section {
+  flex-direction: column;
+}
+
+#thesis-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 2rem 0 1rem 0;
+}
+
+#thesis-row {
+  display: flex;
+  border: 2px solid pink;
+}
+
+#thesis-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 1rem 0 0 1.5rem;
+
+  border: 2px solid yellow;
+}
+
+#thesis-secondary {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 26.4375rem;
+
+  border: 2px solid pink;
+}
+
+#thesis-secondary .image-container {
+  width: 35%;
+  margin: 1rem;
+
+  border: 2px solid blue;
+}
+
+
+/**** Footer section ****/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  border-top: 1px solid #D3D3D3;
+
+    border: 2px solid blue;
+}
+
+footer nav ul {
+  display: flex;
+}
+
+footer nav li {
+  padding-left: 1rem;
+}
+
+footer nav a {
+  color: #505050;
+  font-size: 0.5rem;
+  text-decoration: none;
+}
+
+.copyright {
+  display: flex;
+  font-size: 0.5rem;
 }
