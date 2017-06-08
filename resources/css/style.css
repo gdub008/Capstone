@@ -6,8 +6,12 @@ html {
 }
 
 .main-content {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  justify-content: center;
   top: 4rem; /* To offset for fixed header. */
+
 }
 
 /* Background section containers - Grey and White */
@@ -16,8 +20,6 @@ html {
   align-items: center;
   background-color: #DCDCDC;
   width: 100%;
-
-  border: 2px solid green;
 }
 
 .whitesmoke-bkgnd-section {
@@ -25,8 +27,6 @@ html {
   align-items: center;
   background-color: #F5F5F5;
   width: 100%;
-
-  border: 2px solid green;
 }
 
 .center {
@@ -34,7 +34,7 @@ html {
 }
 
 .button {
-  background-color: #4a4a4a;
+  background-color: #505050;
   color: white;
 }
 
@@ -42,8 +42,6 @@ html {
   display: flex;
   width: 26.4375rem;
   height: 10.5rem;
-
-  border: 2px solid red;
 }
 
 .callout-text {
@@ -53,19 +51,38 @@ html {
   background-color: #F5F5F5;
 }
 
-.callout-text h3 {
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+h3 {
   font-size: 1.2rem;
   font-weight: 500;
-  padding: 1.5rem 0 0.5rem 0;
+  line-height: 1.5rem;
 }
 
-.callout-text p {
+h4 {
+  font-size: 1.0rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+
+h6 {
   font-size: 0.75rem;
-  color: #505050;
-  padding: 0 0 1rem 0;
+  font-weight: 400;
+  line-height: 1rem;
 }
 
-.callout-text a {
+p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #505050;
+}
+
+a {
   font-size: 0.75rem;
   text-decoration: none;
   color: #0099FF;
@@ -73,14 +90,10 @@ html {
 
 .image-container {
   overflow: hidden;
-  border: 2px solid blue;
 }
 
 .image-container img {
-  display: block;
   max-width: 100%;
-
-    border: 2px solid yellow;
 }
 
 .video-container {
@@ -91,8 +104,6 @@ html {
 .video-container video {
   display: block;
   max-width: 100%;
-
-  border: 2px solid green;
 }
 
 
@@ -112,7 +123,6 @@ header .content {
   align-items: center;
   flex-direction: row;
   padding: 0 1.5rem;
-  border: 2px solid green;
 }
 
 header .home {
@@ -184,8 +194,6 @@ header .mobile {
   width: 60%;
   margin: 2rem 1.5rem 2rem 1.5rem;
   background-color: grey;
-
-  border: 2px solid green;
 }
 
 #banner .banner-callout {
@@ -194,8 +202,6 @@ header .mobile {
   flex-direction: column;
   align-items: center;
   margin: 2rem 3rem 2rem 1rem;
-
-  border: 2px solid red;
 }
 
 #banner .button {
@@ -206,21 +212,12 @@ header .mobile {
 }
 
 #banner h1 {
-  font-size: 2.0rem;
-  font-weight: 700;
-  line-height: 2.5rem;
   padding-bottom: 2rem;
-
-  border: 2px solid red;
 }
 
 #banner h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
   line-height: 1.5rem;
   padding-bottom: 2rem;
-
-  border: 2px solid red;
 }
 
 @media only screen and (max-width: 720px) {
@@ -236,10 +233,15 @@ header .mobile {
   #banner .image-container {
     width: 100%;
     height: 11.25rem;
+    margin: 0;
   }
 
   #banner .banner-callout {
     margin: 2rem 1rem;
+  }
+
+  .button {
+    background-color: #A9A9A9;
   }
 }
 
@@ -255,17 +257,19 @@ header .mobile {
   align-items: flex-start;
 }
 
-#info-main-content h1 {
-  font-size: 2rem;
-  font-weight: 700;
+#information-content h1 {
   padding: 2rem 0 1.5rem 0;
 }
 
-#info-main-content p {
-  font-size: 1rem;
+#information-content h3 {
+  padding: 1.5rem 0 0.5rem 0;
 }
 
-#info-main-content span {
+#information-content p {
+  padding: 0 0 2rem 0;
+}
+
+#information-content span {
   font-size: 0.75rem;
   padding: 2rem 0 2rem 0;
 }
@@ -274,22 +278,92 @@ header .mobile {
 
 #info-secondary-callouts {
   display: flex;
-
   flex-direction: column;
   margin-top: 1rem;
-
-  border: 2px solid blue;
 }
 
 #info-secondary-callouts .image-container {
   width: 35%;
   margin: 1rem;
-
-  border: 2px solid green;
 }
 
+#guest,
+#guest .callout-text {
+  background-color: #D3D3D3;
+}
 
-/**** Learning section ****/
+/* Hide the mobile images */
+#orientation #mobile,
+#campus #mobile,
+#guest #mobile {
+  display: none;
+}
+
+/* Mobile version - Main Information section */
+
+@media only screen and (max-width: 720px) {
+
+  #info-main-content {
+    display: none;
+  }
+
+  #information-content .whitesmoke-bkgnd-section {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  #info-secondary-callouts {
+    margin: 0;
+  }
+
+  #info-secondary-callouts .content-callout {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Hide the desktop images and expose mobile images */
+  #orientation #desktop,
+  #campus #desktop,
+  #guest #desktop {
+    display: none;
+  }
+  #orientation #mobile,
+  #campus #mobile,
+  #guest #mobile {
+    display: flex;
+  }
+
+  #info-secondary-callouts .image-container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  #info-secondary-callouts .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  #info-secondary-callouts .callout-text {
+    width: 100%;
+    text-align: left;
+  }
+
+  #info-secondary-callouts h3 {
+    padding: 1rem 0 0.5rem 1rem;
+  }
+  #info-secondary-callouts p {
+    padding: 0 0 0.5rem 1rem;
+  }
+  #info-secondary-callouts a {
+    padding: 0 0 1rem 1rem;
+  }
+}
+
+/********** Learning section **********/
 /* Learning departments */
 
 #learning-content {
@@ -298,38 +372,27 @@ header .mobile {
 
 #learning-content .grey-bkgnd-section {
   flex-direction: column;
-
 }
 
 #learning-content h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
   padding: 2rem 0 1rem 0;
 }
 
 #learning-content h3 {
-  font-size: 1rem;
-  font-weight: 500;
   padding: 1rem 0.5rem 0 1rem;
 }
 
 #learning-content h6 {
-  font-size: 0.75rem;
-  font-weight: 400;
   padding: 0.5rem 0.5rem 0 1rem;
 }
 
 #learning-content p {
-  font-size: 0.75rem;
-  color: #505050;
   padding: 0.5rem 0.5rem 1.5rem 1rem;
 }
 
 #learning-content .image-container {
   background-color: white;
   width: 100%;
-
-  border: 2px solid green;
 }
 
 .course-row {
@@ -337,8 +400,6 @@ header .mobile {
   margin: 0 2rem;
   align-items: stretch;
   justify-content: center;
-
-  border: 2px solid red;
 }
 
 .course {
@@ -346,20 +407,50 @@ header .mobile {
   flex: 1;
   overflow-x: hidden;
   padding: 1rem;
-
-  border: 2px solid blue;
 }
 
 .course-content {
   display: flex;
   flex: 1;
   flex-direction: column;
-
-  border: 2px solid pink;
 }
 
+.learning-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
 
-/**** Thesis section ****/
+#learning-content #mobile {
+  display: none;
+}
+
+#learning-content .whitesmoke-bkgnd-section {
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+#learning-content #mobile h3 {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.25rem 0;
+  background-color: #D3D3D3;
+}
+
+@media only screen and (max-width: 720px) {
+
+  #learning-content #desktop {
+    display: none;
+  }
+
+  #learning-content #mobile {
+    display: flex;
+  }
+
+}
+
+/********** Thesis section **********/
 /* Learning departments */
 
 #thesis-content {
@@ -371,31 +462,28 @@ header .mobile {
 }
 
 #thesis-content h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  padding: 2rem 0 2rem 0;
+}
+
+#thesis-content h3 {
   padding: 2rem 0 1rem 0;
 }
 
 #thesis-row {
   display: flex;
-  border: 2px solid pink;
 }
 
 #thesis-main {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 1rem 0 0 1.5rem;
-
-  border: 2px solid yellow;
+  margin: 0 1rem 0 1.5rem;
 }
 
 #thesis-secondary {
   flex-direction: column;
   align-items: flex-start;
   width: 26.4375rem;
-
-  border: 2px solid pink;
 }
 
 #thesis-secondary .image-container {
@@ -405,8 +493,28 @@ header .mobile {
   border: 2px solid blue;
 }
 
+#fisma,
+#fisma .callout-text {
+  background-color: #D3D3D3;​
+}
 
-/**** Footer section ****/
+@media only screen and (max-width: 720px) {
+
+  #thesis-main {
+    margin: 0;
+  }
+
+  #thesis-main .callout-text {
+    display: none;
+  }
+
+  #thesis-secondary {
+    display: none;
+  }
+}
+
+
+/********** Footer section **********/
 
 footer {
   display: flex;
@@ -414,8 +522,6 @@ footer {
   align-items: center;
   padding: 1rem 1.5rem 2rem 1.5rem;
   border-top: 1px solid #D3D3D3;
-
-    border: 2px solid blue;
 }
 
 footer nav ul {
@@ -428,11 +534,23 @@ footer nav li {
 
 footer nav a {
   color: #505050;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   text-decoration: none;
 }
 
 .copyright {
   display: flex;
   font-size: 0.5rem;
+}
+
+@media only screen and (max-width: 720px) {
+
+  footer {
+    padding: 2.5rem 1rem 1rem 1rem;
+  }
+
+  .footer-nav {
+    display: none;
+  }
+
 }
